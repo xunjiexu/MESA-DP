@@ -66,7 +66,7 @@ Some useful tutorials:
  - If you just need to simulate one star with a specific profile (including new pyhsics settings), simply run 
   ```bash
   cd mesa-DP
-  ./mk
+  ./rn
   ```
  - If you need to run the simulation for many stars, please have a look at `run_models_v2.1.py`.
  - If you need to run the simulation for the Sun with many sets of new physics parameters, please have a look at `run_models_Sun.py`.
