@@ -1,0 +1,89 @@
+! inlist to evolve a 15 solar mass star
+
+! For the sake of future readers of this file (yourself included),
+! ONLY include the controls you are actually using.  DO NOT include
+! all of the other controls that simply have their default values.
+
+&star_job
+
+   ! see star/defaults/star_job.defaults
+
+   ! begin with a pre-main sequence model
+   create_pre_main_sequence_model = .true.
+
+   ! save a model at the end of the run
+   save_model_when_terminate = .false.
+   save_model_filename = '15M_at_TAMS.mod'
+
+   write_profile_when_terminate = .true.
+   filename_for_profile_when_terminate = 'final_profile.data'
+
+   ! display on-screen plots
+   pgstar_flag = .true.
+
+/ ! end of star_job namelist
+
+
+&eos
+
+   ! eos options
+   ! see eos/defaults/eos.defaults
+
+/ ! end of eos namelist
+
+
+&kap
+
+   ! kap options
+   ! see kap/defaults/kap.defaults
+   use_Type2_opacities = .true.
+   Zbase = 0.02 !using solar metallicity; default 0.02
+
+/ ! end of kap namelist
+
+
+&controls
+
+   ! see star/defaults/controls.defaults
+
+   ! starting specifications
+
+   initial_mass = 1.0 ! in Msun units
+   initial_z = 0.02 !using solar metallicity; default 0.02
+
+   
+   atm_option = 'table'
+
+  
+
+   x_ctrl(1) = -1.0 ! sign of the contribution; -1.0 means energy loss, +1.0 means extra energy production
+   x_ctrl(2) = 1e-15
+   x_ctrl(3) = 1.0 !e.g., 1.0d0 means 1 eV
+   use_other_energy = .true.
+
+   ! when to stop
+    max_age = 4.85d9 
+   ! wind
+
+   ! atmosphere
+
+   ! rotation
+
+   ! element diffusion
+
+   ! mlt
+
+   ! mixing
+
+   ! timesteps
+
+   ! mesh
+
+   ! solver
+   ! options for energy conservation (see MESA V, Section 3)
+   energy_eqn_option = 'dedt'
+   use_gold_tolerances = .true.
+
+   ! output
+
+/ ! end of controls namelist
