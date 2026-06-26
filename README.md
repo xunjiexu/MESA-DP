@@ -1,7 +1,7 @@
 # MESA-DP
 MESA code to simulate the impact of dark photons on stars
 
-This code is used in the publication arXiv:2606:xxxxx. The physics and technical details are explained in this paper. Please cite it if you use the code in your research.
+This code is used in the publication arXiv:2606.25779. The physics and technical details are explained in this paper. Please cite it if you use the code in your research.
 
 # MESA Installation
 To use the code, you first need to install MESA and MESA SDK following the instructions here:
